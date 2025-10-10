@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://j4bbn0xol7oh"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_kf4a5"]
+b = Vector2(1, 644)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2lsvp"]
+b = Vector2(1150, -3)
+
+[node name="Battle area1" type="Node2D"]
+
+[node name="World boundary" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World boundary"]
+shape = SubResource("SegmentShape2D_kf4a5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="World boundary"]
+shape = SubResource("SegmentShape2D_2lsvp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="World boundary"]
