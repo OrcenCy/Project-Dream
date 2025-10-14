@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://j4bbn0xol7oh"]
+[gd_scene load_steps=5 format=3 uid="uid://j4bbn0xol7oh"]
+
+[ext_resource type="PackedScene" uid="uid://c8jlbi1w8cg13" path="res://Grid interaction folder/sample_character.tscn" id="1_2lsvp"]
+[ext_resource type="PackedScene" uid="uid://bt62e22s53aeq" path="res://obstacle_area.tscn" id="2_n2bds"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kf4a5"]
 b = Vector2(1, 644)
@@ -8,7 +11,13 @@ b = Vector2(1150, -3)
 
 [node name="Battle area1" type="Node2D"]
 
-[node name="World boundary" type="Area2D" parent="."]
+[node name="Sample character" parent="." instance=ExtResource("1_2lsvp")]
+position = Vector2(272, 229)
+
+[node name="Obstacle_area" parent="." instance=ExtResource("2_n2bds")]
+position = Vector2(551, 327)
+
+[node name="World boundary" type="Area2D" parent="." groups=["Obstacle"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World boundary"]
 shape = SubResource("SegmentShape2D_kf4a5")

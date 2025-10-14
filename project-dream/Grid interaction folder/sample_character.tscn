@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8jlbi1w8cg13"]
+[gd_scene load_steps=7 format=3 uid="uid://c8jlbi1w8cg13"]
 
 [ext_resource type="Script" uid="uid://iu7xjbdqdprf" path="res://Grid interaction folder/sample_character.gd" id="1_5m3ge"]
 [ext_resource type="Texture2D" uid="uid://c8eboeb2luxr" path="res://Gabe's folder/kenney_shape-characters/PNG/Default/blue_body_square.png" id="1_27cbn"]
@@ -8,6 +8,9 @@
 size = Vector2(80, 80)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_5m3ge"]
+b = Vector2(0, 0.1)
+
+[sub_resource type="Curve2D" id="Curve2D_5m3ge"]
 
 [node name="Sample character" type="Node2D"]
 script = ExtResource("1_5m3ge")
@@ -20,6 +23,8 @@ position = Vector2(0, -10)
 texture = ExtResource("2_5m3ge")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_mxavn")
@@ -27,9 +32,15 @@ shape = SubResource("RectangleShape2D_mxavn")
 [node name="Destination line" type="Line2D" parent="."]
 points = PackedVector2Array(0, 0)
 
-[node name="Area2D" type="Area2D" parent="Destination line"]
+[node name="Dectection Area" type="Area2D" parent="Destination line"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Destination line/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Destination line/Dectection Area"]
 shape = SubResource("SegmentShape2D_5m3ge")
+debug_color = Color(0.9766194, 0, 0.41407368, 0.41960785)
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_5m3ge")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
