@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm0prokb5qh0s"
-path="res://.godot/imported/DreamDiver.png-f93072827cfb8b0e648a3a08abc6053f.ctex"
+uid="uid://btn1fk72xhwh8"
+path="res://.godot/imported/Town.jpg-34e6e57ee6a79dd53b7652aaabcc5093.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DreamDiver.png"
-dest_files=["res://.godot/imported/DreamDiver.png-f93072827cfb8b0e648a3a08abc6053f.ctex"]
+source_file="res://Images/Town.jpg"
+dest_files=["res://.godot/imported/Town.jpg-34e6e57ee6a79dd53b7652aaabcc5093.ctex"]
 
 [params]
 

@@ -11,6 +11,10 @@ config_version=5
 [application]
 
 config/name="Dream"
-run/main_scene="uid://ceuovddc0a7ox"
+run/main_scene="uid://1kn0iyuuea7p"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Images/icon.svg"
+
+[autoload]
+
+Globals="*res://Scripts/Globals.gd"
