@@ -1,14 +1,14 @@
 extends ColorRect
 
 func Fading_Out(): 
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "modulate", Color(0,0,0,225), 5.0)
 	print("kys")
+	var tween = get_tree().create_tween().bind_node(self)
+	tween.tween_property(self, "modulate", Color(1,1,1,255), 2.0)
 	pass
 	
-func fade_In():
+func Fading_In():
 	var tween = get_tree().create_tween().bind_node(self)
-	tween.tween_property(self, "modulate", Color(0,0,0,1), 5.0)
+	tween.tween_property(self, "modulate", Color(1,1,1,1), 2.0)
 	pass
 	
 	

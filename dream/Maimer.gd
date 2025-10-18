@@ -1,27 +1,27 @@
 extends Node2D
+var x = 0
 
 func _on_texture_button_pressed():
-	print("biggie cheese")
+	$ColorRect.visible = true
 	$ColorRect.Fading_Out()
-	$Town.visible = false
+	await get_tree().create_timer(2.5).timeout
 	$Library.visible = true
-	#$ColorRect/Timer.start()
-	#_on_timer_timeout()
-	print("yo mama")
-	$ColorRect.fade_In()
+	$Town.visible = false
+	await get_tree().create_timer(0.5).timeout
+	$ColorRect.Fading_In()
+	await get_tree().create_timer(2.5).timeout
+	$ColorRect.visible = false
 	pass # Replace with function body.
 
 
 func _on_texture_button_2_pressed():
+	$ColorRect.visible = true
 	$ColorRect.Fading_Out()
+	await get_tree().create_timer(2.5).timeout
 	$Town.visible = true
 	$Library.visible = false
-	$ColorRect.fade_In()
-	pass # Replace with function body.
-
-
-func _on_timer_timeout():
-	
-
-	$ColorRect.fade_In()
+	await get_tree().create_timer(0.5).timeout
+	$ColorRect.Fading_In()
+	await get_tree().create_timer(2.5).timeout
+	$ColorRect.visible = false
 	pass # Replace with function body.
