@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c8jlbi1w8cg13"]
+
+[ext_resource type="Script" uid="uid://iu7xjbdqdprf" path="res://Grid interaction folder/Movement_Manager.gd" id="1_5m3ge"]
+[ext_resource type="Texture2D" uid="uid://c8eboeb2luxr" path="res://Gabe's folder/kenney_shape-characters/PNG/Default/blue_body_square.png" id="1_27cbn"]
+[ext_resource type="Texture2D" uid="uid://bmw3mt5n4ci5g" path="res://Gabe's folder/kenney_shape-characters/PNG/Default/face_b.png" id="2_5m3ge"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mxavn"]
+size = Vector2(80, 80)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5m3ge"]
+b = Vector2(0, 0.1)
+
+[node name="Movement manager" type="Node2D"]
+script = ExtResource("1_5m3ge")
+
+[node name="BlueBodySquare" type="Sprite2D" parent="."]
+texture = ExtResource("1_27cbn")
+
+[node name="FaceB" type="Sprite2D" parent="BlueBodySquare"]
+position = Vector2(0, -10)
+texture = ExtResource("2_5m3ge")
+
+[node name="Area2D" type="Area2D" parent="BlueBodySquare/FaceB"]
+position = Vector2(0, 10)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueBodySquare/FaceB/Area2D"]
+shape = SubResource("RectangleShape2D_mxavn")
+
+[node name="Destination line" type="Line2D" parent="BlueBodySquare"]
+texture_repeat = 1
+
+[node name="Dectection Area" type="Area2D" parent="BlueBodySquare/Destination line"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueBodySquare/Destination line/Dectection Area"]
+shape = SubResource("SegmentShape2D_5m3ge")
+debug_color = Color(0.9766194, 0, 0.41407368, 0.41960785)
+
+[connection signal="input_event" from="BlueBodySquare/FaceB/Area2D" to="." method="_on_area_2d_input_event"]
