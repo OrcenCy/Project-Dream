@@ -11,12 +11,15 @@ config_version=5
 [application]
 
 config/name="Project dream"
+run/main_scene="uid://j4bbn0xol7oh"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [global_group]
 
 Obstacle=""
+Player=""
+Enemy=""
 
 [rendering]
 

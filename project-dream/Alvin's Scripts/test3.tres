@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="stats" load_steps=2 format=3 uid="uid://dr21yksac7xhd"]
+
+[ext_resource type="Script" uid="uid://tgyl0bsp7oqk" path="res://Alvin's Scripts/stats.gd" id="1_yc361"]
+
+[resource]
+script = ExtResource("1_yc361")
+character_name = "Test3"
+max_health = 3
+metadata/_custom_type_script = "uid://tgyl0bsp7oqk"
